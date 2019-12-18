@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.1.43</version>
+			<version>1.2.25</version>
 		</dependency>
 		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
 		<dependency>
