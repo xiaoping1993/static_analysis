@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<meta charset="utf-8" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+	  	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache" />
+	  	<META HTTP-EQUIV="Expires" CONTENT="0"/>
+	  	<meta name="viewport" content="width=device-width,height=device-height,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>天易在线统计分析</title>
+		<link rel="stylesheet" type="text/css" href="login/css/login.css" media="screen and (min-width:820px)"/>
+		<link rel="stylesheet" type="text/css" href="login/css/loginmedia820.css" media="screen and (max-width:820px)"/>
+	</head>
+	<body>
+		<div class="login">
+		           <div class='title'>
+		                                               天易在线统计分析
+		           </div>
+					<form name="formLogin" id="formLogin">
+						<div class="search">
+						     <div class='loginNameIcon' style="background-image: url('login/images/id.png');"></div>
+							 <input id="loginName" name="loginName" type="text" placeholder="用户名" maxlength="#" />
+							 <span class="msg" style="display: none;"></span>
+						</div>
+						<div class="search">
+						    <div class='passwordIcon' style="background-image: url('login/images/key.png');"></div>
+							<input id="password" name="password" type="password" placeholder="密码" maxlength="#" />
+							<span class="msg" style="display: none;"></span>
+						</div>
+						<div class="box">
+							<input id="checkPwd" name="checkPwd" type="checkbox" />
+							<p>记住用户名</p>
+						</div>
+						<div class="ACK">
+							<input value="登录" onclick="Login()" type="button" />
+							<input value="刷脸登录" onclick="faceLogin()" type="button" />
+						</div>
+					</form>
+					
+				
+			
+		</div>
+		<div class="bottom">
+		
+		2009-2018 shsy.com 京ICP备14042396号-1 上海石易电子科技有限公司 版权所有
+		</div>
+		<video autoplay="autoplay" id="faceId" style="display: none;"></video>
+		<script src="jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="login/js/three.min.js"></script>
+        <script src="login/js/login.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="main/js/index.js" charset="utf-8"></script>
+		
+	</body>
+</html>

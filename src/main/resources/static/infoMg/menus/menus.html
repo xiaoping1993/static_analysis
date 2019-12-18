@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../../easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../../easyui/themes/icon.css"/>
+<link rel="stylesheet" type="text/css" href="css/menus.css"/>
+<title>菜单栏管理</title>
+</head>
+<body>
+<h4 class="bigtitle">菜单栏管理</h4>
+	<div class='container'>
+        <div class="buding"></div>
+        <div class="buding2"></div>
+		<table id="menusdg"></table>
+    </div>    
+		<div class='menusMode'>
+          <div class="box">
+			<h4 id='tips'></h4>
+			<form>
+              <div class="inputout">
+				<div id = "divId" class="inputbox"><label for="id">主键:</label>
+					<input id="id" readonly type="text"/></div>
+				<div class="inputbox"><label for="pid">父级:</label>
+					<!-- <input id="pid" type="text"/></div> -->
+					<input type="button" id="pidcontent"  placeholder="请选择父级菜单" style="background-color: white;text-align: left;">
+					<ul class="easyui-tree" id="pid" style="display: none;"></ul>
+				</div>
+				<div class="inputbox"><label for="name">菜单名称:</label>
+					<input id="name" type="text"/></div>
+				<div class="inputbox"><label for="url">url:</label>
+					<input id="url" type="text"/></div>
+				<div class="inputbox"><label for="order">排序:</label>
+					<input id="order" type="text"/></div>
+                 <div class="bottom">
+                    <input type="button" id="menusSave" value="保存"/>
+                    <input type="button" id="menusCancel" value="取消">
+                </div>
+               </div> 
+			</form>
+           </div> 
+		</div>
+	
+	<script type="text/javascript" src="../../jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="../../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/menus.js"></script>
+</body>
+</html>

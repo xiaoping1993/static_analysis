@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.static_analysis.mapper.tyzx.ExceptionInfoMgMapper">
+	<select id="getExceptionInfo" resultType="map" parameterType="map">
+		select a.appName,a.id,a.reasons,a.resolvemethod,a.resolvepersons, to_char(a.date, 'yyyy-mm-dd hh:mm:ss') as date,b.operateSystem,b.version,a.exception_msg,b.mphone_mode,a.state,a.exception_detailmsgstring,a.exception_detailmsgfile from exceptionInfo a LEFT JOIN ty_rj_situation b on a.appName=b.appName and a.mphone_imei=b.mphone_imei 
+		where 
+		<choose>
+			<when test="ids!='null'">
+				a.id in (${ids}) and
+			</when>
+			<otherwise>
+				<if test="appName!='all' and (appName!=null and appName!='')">
+				a.appName=${appName} and
+				</if>
+				<if test="state!='all' and (state!=null and state!='')">
+					a.state=${state} and
+				</if>
+				<if test="start!='null' and (start!=null and start!='')">
+		    		a.date &gt;= '${start}' and
+		    	</if>
+		    	<if test="end!='null' and (end!=null and end!='')">
+		    		a.date &lt;= '${end}' and
+		    	</if>
+			</otherwise>
+		</choose>
+    	1=1 
+    	order by date 
+    	limit ${limitend} offset ${limitstart}
+	</select>
+	
+	<select id="getExceptionInfoCount" resultType="Integer" parameterType="map">
+		select count(1) from exceptionInfo a LEFT JOIN ty_rj_situation b on a.appName=b.appName and a.mphone_imei=b.mphone_imei 
+		where 
+		<choose>
+			<when test="ids!='null'">
+				a.id in (${ids}) and
+			</when>
+			<otherwise>
+				<if test="appName!='all' and (appName!=null and appName!='')">
+				a.appName=${appName} and
+				</if>
+				<if test="state!='all' and (state!=null and state!='')">
+					a.state=${state} and
+				</if>
+				<if test="start!='null' and (start!=null and start!='')">
+		    		a.date &gt;= '${start}' and
+		    	</if>
+		    	<if test="end!='null' and (end!=null and end!='')">
+		    		a.date &lt;= '${end}' and
+		    	</if>
+			</otherwise>
+		</choose>
+    	1=1 
+	</select>
+	
+	<select id="getExceptionInfoByType" resultType="map" parameterType="map">
+		select count(1),exception_msg as type,string_agg(to_char(id,'FM999'), ',') as ids from exceptioninfo  
+		where
+		<if test="appName!='all' and (appName!=null and appName!='')">
+			appName=${appName} and
+		</if>
+		<if test="state!='all' and (state!=null and state!='')">
+			state=${state} and
+		</if>
+		<if test="start!='null' and (start!=null and start!='')">
+    		date &gt;= '${start}' and
+    	</if>
+    	<if test="end!='null' and (end!=null and end!='')">
+    		date &lt;= '${end}' and
+    	</if>
+    	1=1  
+		group by exception_msg having exception_msg &lt;&gt;'' 
+		union all 
+		select count(1),exception_detailmsgstring as type,string_agg(to_char(id,'FM999'),',') from (select * from exceptioninfo where exception_msg is null) a 
+		where  
+		<if test="appName!='all' and (appName!=null and appName!='')">
+			appName=${appName} and 
+		</if>
+		<if test="state!='all' and (state!=null and state!='')">
+			state=${state} and 
+		</if>
+		<if test="start!='null' and (start!=null and start!='')">
+    		date &gt;= '${start}' and 
+    	</if>
+    	<if test="end!='null' and (end!=null and end!='')">
+    		date &lt;= '${end}' and  
+    	</if>
+    	1=1 
+		GROUP BY exception_detailmsgstring having exception_detailmsgstring &lt;&gt;''
+	</select>
+	<select id="getMeltModelsInfo"  resultType="map" parameterType="map">
+		select b.mphone_mode as name,count(1) as data from exceptioninfo a join ty_rj_situation b on a.mphone_imei=b.mphone_imei 
+		where
+		<if test="appName!='all' and (appName!=null and appName!='')">
+			a.appName=${appName} and 
+		</if>
+		<if test="start!='null' and (start!=null and start!='')">
+    		a.date &gt;= '${start}' and 
+    	</if>
+    	<if test="end!='null' and (end!=null and end!='')">
+    		a.date &lt;= '${end}' and
+    	</if>
+		a.type=1 
+		group by b.mphone_mode
+	</select>
+</mapper>

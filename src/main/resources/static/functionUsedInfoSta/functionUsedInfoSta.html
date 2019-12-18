@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>功能使用情况统计</title>
+<meta name="viewport" content="width=device-width,height=device-height,maximum-scale=1.0,user-scalable=no"/>
+<meta http-equiv="Access-Control-Allow-Origin" content="*"> 
+<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../tyControls/css/tyControls.css"/>
+<link rel="stylesheet" type="text/css" href="css/functionUsedInfoSta.css" media="screen and (min-width:820px)"/>
+<link rel="stylesheet" type="text/css" href="css/functionUsedInfoStamedia820.css" media="screen and (max-width:820px)"/>
+</head>
+<body>
+	<div class="filter">
+		<div class="appName">
+			<span>App名称:</span>
+			<select>
+				<option value="all">全部</option>
+			</select>
+		</div>
+		<div class='timeing'>
+			<span>时间:</span>
+			<select>
+				<option value='7'>最近7天</option>
+				<option value='15'>最近15天</option>
+				<option value='30'>近一个月</option>
+				<option value='90'>近三个月</option>
+				<option value='180'>近半年</option>
+			</select>
+		</div>
+		<div class="customer">
+			<span>客户</span>
+			<div id="customer"></div>
+		</div>
+		<button id="search" class="search">查询</button>
+	</div>
+	<div class="functions">
+		<button class="pushClickRate btn-act btn-switch">推送点击率</button>
+		<button class="pageParkTimes btn-switch">页面停留时长</button>
+		<button class="buriedPoint">埋点信息</button>
+	</div>
+	<div class="showResult">
+		<div class="showResult1">
+		    <div class="buding"></div>
+			<div id="dg"></div>
+			
+		</div>
+		<div class="showResult2">
+			<div id="pageParking"></div>
+		</div>
+	</div>
+	
+	<div class="warnDetals">
+	       <div class='warnDetalsbox'>
+				<button id = "close">X</button>
+				<div id='warnPie'></div>
+		   </div>
+	 </div>
+	
+	
+	<script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../tyControls/js/tycontrols.js"></script>
+	<script type="text/javascript" src="../highmaps/js/highcharts.js"></script>
+	<script type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/functionUsedInfoSta.js"></script>
+	<script>
+    $(function(){
+		$('.btn-switch').click(function(){
+			$('.btn-switch').removeClass('btn-act');
+			$(this).addClass('btn-act');
+			})
+		})
+    
+    </script>
+    
+    
+</body>
+</html>

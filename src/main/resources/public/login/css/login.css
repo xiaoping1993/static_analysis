@@ -1,0 +1,117 @@
+
+html,body{ margin:0; padding:0; overflow:hidden;}
+		
+			body {
+				background:url(../images/bg.png) 100% 100%;
+				
+			}
+
+			
+			.login{ width: 320px;
+    height: 340px; background:rgba(255,255,255,0.6); position:absolute; left:50%; top:50%; margin:-150px 0 0 -150px; border-radius:10px; display:block;
+    box-shadow: rgba(0,0,0,0.5) 0 0 60px;
+    }
+
+
+
+.title{ position:absolute; width:400px; text-align:center;color:#fff;font-size:30px; top:-80px; left:-40px;
+text-shadow:#8fdcff 0 0 10px;    letter-spacing: 3px;}
+
+
+.search{
+	width: 270px;
+    height: 48px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 32px;
+    position: relative;
+}
+.loginNameIcon, .passwordIcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+ }    
+ 
+ 
+ input#password:-webkit-autofill, input#loginName:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    color: #a1a1a1 !important;
+}
+ 
+ 
+input#loginName {
+    width: 228px;
+    height: 48px;
+    line-height: 42px;
+    border: none;
+    color: #a1a1a1;
+    font-size: 14px;
+    float: left;
+    padding-left: 42px;
+    outline: none;
+}
+input#password {
+    width: 228px;
+    height: 48px;
+    line-height: 42px;
+    border: none;
+    color: #a1a1a1;
+    font-size: 14px;
+    float: left;
+    padding-left: 42px;
+    outline: none;
+}
+.box {
+    margin: 20px 0 0 26px;
+}
+.box input[type="checkbox"] {
+    width: 20px;
+    height: 15px;
+    float: left;outline: none;
+    position: relative;
+    top: -3px;
+}
+.box p {
+    font-size: 14px;
+    text-align: left;
+    font-weight: normal;
+    line-height: 14px;
+    color: #fff;
+    margin-right: 30px;
+    }
+.ACK {
+    width: 270px;
+    height: 95px;
+    background: #9fe1ff;
+    border-radius: 5px;
+    margin: 20px 0 0 26px;
+    overflow: hidden;
+}
+.ACK input[type="button"] {
+    width: 270px;
+    height: 48px;
+    border: 0;
+    margin-bottom: 2px;
+    background: #28a7e1;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.focus ul li{display:inline-block; width:160px;width: 150px;text-indent: 25px;margin: 5px 0;}
+.bottom {position:absolute; bottom:20px;width:100%; color:#fff; font-size:12px; text-align:center;opacity:0.6;}
+
+
+#faceId{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	border-radius:20px;
+	margin: -250px 0 0 -200px;
+}

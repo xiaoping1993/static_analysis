@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.static_analysis.mapper.tyzx.ActivitydegreeStaMapper">
+	 <select id="getActivitys" resultType="Integer" parameterType="map">
+    	SELECT SUM (A . COUNT) FROM (select count,updatetime from (SELECT COUNT (1) AS COUNT, to_char(update_time, 'YYYY-MM-DD') AS updatetime FROM ty_rj_situation where
+    	<if test="appName!='all' and (appName!=null and appName!='')">
+    		appName=${appName} and
+    	</if>
+    	<if test="operateSystem!='all' and (operateSystem!=null and operateSystem!='')">
+    		operateSystem=${operateSystem} and
+    	</if>
+    	<if test="appVersion!='all' and (appVersion!=null and appVersion!='')">
+    		version=#{appVersion} and
+    	</if>
+    	<choose>
+			<when test="accounts=='all'">
+				<if test="cids!=''">
+					cid in (${cids}) and
+				</if>
+			</when>
+			<otherwise>
+				login_name = #{accounts} and
+			</otherwise>
+		</choose>
+    	1=1 group by updatetime ) a where to_date(updatetime, 'YYYY-MM-DD') > (CURRENT_DATE - ${timing})
+    	<foreach collection='otherDates' index='index' item='item'  separator=' '>
+    		UNION (SELECT 0, '${item}')
+    	</foreach>) a
+    	group by updatetime order by updatetime asc
+	</select>
+	
+	<select id="getAddPersons" resultType="Integer" parameterType="map">
+    	SELECT SUM (A . COUNT) FROM (select count,createtime from (SELECT COUNT (1) AS COUNT, to_char(create_time, 'YYYY-MM-DD') AS createtime FROM ty_rj_situation where
+    	<if test="appName!='all' and (appName!=null and appName!='')">
+    		appName=${appName} and
+    	</if>
+    	<if test="operateSystem!='all' and (operateSystem!=null and operateSystem!='')">
+    		operateSystem=${operateSystem} and
+    	</if>
+    	<if test="appVersion!='all' and (appVersion!=null and appVersion!='')">
+    		version=#{appVersion} and
+    	</if>
+    	<choose>
+			<when test="accounts=='all'">
+				<if test="cids!=''">
+					cid in (${cids}) and
+				</if>
+			</when>
+			<otherwise>
+				login_name = #{accounts} and
+			</otherwise>
+		</choose>
+    	1=1 group by createtime ) a where to_date(createtime, 'YYYY-MM-DD') > (CURRENT_DATE - ${timing})
+    	<foreach collection='otherDates' index='index' item='item'  separator=' '>
+    		UNION (SELECT 0, '${item}')
+    	</foreach>) a
+    	group by createtime order by createtime asc
+	</select>
+	
+	<select id="getTotalPersons" resultType="Integer" parameterType="map">
+		select count(1) from ty_rj_situation where 
+		<if test="appName!='all' and (appName!=null and appName!='')">
+			appName=${appName} and
+		</if>
+		<if test="operateSystem!='all' and (operateSystem!=null and operateSystem!='')">
+			operateSystem=${operateSystem} and
+		</if>
+		<if test="appVersion!='all' and (appVersion!=null and appVersion!='')">
+    		version=#{appVersion} and
+    	</if>
+    	<choose>
+			<when test="accounts=='all'">
+				<if test="cids!=''">
+					cid in (${cids}) and
+				</if>
+			</when>
+			<otherwise>
+				login_name = #{accounts} and
+			</otherwise>
+		</choose>
+    	1=1 
+	</select>
+	
+</mapper>

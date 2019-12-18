@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.static_analysis.mapper.tyzx.FunctionUsedInfoMapper">
+	<select id="getPushClickRateInfoData" resultType="map" parameterType="map">
+    	select to_char(time,'YYYY-MM-DD') as formateTime,appName,pushTotals,clickTotals from pushStatistics where
+    	<if test="appName!='all' and (appName!=null and appName!='')">
+    		appName=${appName} and
+    	</if>
+    	1=1 
+    	order by time desc 
+        limit ${end} offset ${start}
+	</select>
+	
+	<select id="getPushClickRateInfoTotal" resultType="Integer" parameterType="map">
+    	select count(1) from pushStatistics where
+    	<if test="appName!='all' and (appName!=null and appName!='')">
+    		appName=${appName} and
+    	</if>
+    	1=1 
+	</select>
+	
+	<select id="getPageParkingtimes" resultType="Integer" parameterType="map">
+    	select sum(a.parkingtime) as parkingtime from
+			(select customerId,coalesce(SUM(parkingtime),0) as parkingtime from page_park_time 
+		where 
+			date >=current_date - ${timing}  GROUP BY pageCode,customerId HAVING pageCode = ${pageCode} and customerId in ${cidsString}
+		<foreach collection="cids" index="index" item="item" separator=" ">
+			union (select ${item},0)
+		</foreach> 
+		) a
+		GROUP BY customerId
+	</select>
+	
+	<select id="getfocusPages" resultType="map" parameterType="String">
+    	select pageCode,pageName from focusPage where 
+    	<if test="appName!='all' and (appName!=null and appName!='')">
+    		appName=${appName} and
+    	</if>
+    	1=1
+	</select>
+</mapper>

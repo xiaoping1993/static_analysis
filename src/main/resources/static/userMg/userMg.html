@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>人员管理</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/userMg.css" media="screen and (min-width:820px)"/>
+		<link rel="stylesheet" type="text/css" href="css/userMgmedia820.css" media="screen and (max-width:820px)"/>
+	</head>
+	<body>
+	    <div class="content_top">
+	    	
+	    	<h4 class="bigtitle">人员管理</h4>
+            <button  id = "addUser">新增</button>
+	    	<div class="content_top_left">
+	    		<div class="buding"></div>
+	    		<table id="userdg"></table>
+	    	</div>
+	    </div>
+	   	
+	    <div class="content_bottom">
+	    
+	    	<div class="content_bottom_left" id="roleMg">
+	    		<button id = "addRole">新增</button>
+	    		<table class="table table-hover">
+	    			<thead>
+	    				<tr><th style="text-align: center;">角色</th>
+	    				    
+	    				</tr>
+	    			</thead>
+	    			<tbody>
+	    			</tbody>
+	    		</table>
+	    	</div>
+	    	<div class="content_bottom_right">
+	    	<div class="content_bottom_title">角色权限分配</div>
+	    		
+	    		<p id="myRole_id" style="display: none;"></p>
+	    		<div id="authoritys">
+	    		<button  id="configsubmit" style="float: right;margin-right: 50px;margin-top: 50px">确认配置</button>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 新增账号配置角色模态框 -->
+		<div class="modal fade" id="configRole" tabindex="-1" role="dialog" aria-labelledby="configRole" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		                <h4 class="modal-title" id="myModalLabel">配置角色</h4>
+		                <input type='text' id = "addUserRole" style="display: none;" placeholder='填写新增账号'>
+		            </div>
+		            <div class="modal-body">
+		            	<div>
+		            		<p id="user_id" style="display: none;"></p>
+		            		<p id="role_id" style="display: none;"></p>
+		            		<p id="role_ids" style="display: none;"></p>
+		            		<div class="tablebox">
+                            <div class="buding2"></div>
+		            		<table id="roleList" style="width:400px;height:500px"></table>
+		            	</div>
+		            </div>
+		            <div class="modal-footer">
+		            	 <button type="button" id="configtj">配置完成</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal-dialog -->
+		</div></div>
+		<!-- 配置用户新密码 -->
+		<div class="modal fade" id ="modifyPwd" tabindex="-1" role="dialog" aria-labelledby="modifyPwd" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">修改密码</h4>
+					</div>
+					<div class="modal-body">
+						<span>输入新密码：</span><input id="newPwd" type="text" placeholder="请输入新密码"/>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="modifyPwdComplete">确认修改</button>
+						<button type="button" class="btn btn-primary" id="modifyPwdCancel">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 新增角色 -->
+		<div class="modal fade" id="addRoleModel" tabindex="-1" role="dialog" aria-labelledby="addRoleMode" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">新增角色</h4>
+					</div>
+					<div class="modal-body">
+						<span>角色名称：</span><input id="roleName" type="text" placeholder="角色名称">
+						<span>描述：</span><input id="roleDescribe" type="text" placeholder="角色描述">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="addRoleModelComplete">确定</button>
+						<button type="button" class="btn btn-primary" id="addRoleModelCancel">取消</button>
+					</div>
+				</div>
+			</div>
+			<h3>新增角色</h3>
+			<input type="text" placeholder="角色名称"/>
+		</div>
+		<script type="text/javascript" src="../jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="js/userMg.js"></script>
+	</body>
+</html>

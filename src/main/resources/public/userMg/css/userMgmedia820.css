@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+html,body{
+	width: 100%;
+    height: 100%;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    overflow: scroll;
+}
+h4{
+	
+	display: inline-block;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 50px;
+}
+.content_top{
+	height: 300px; position:relative; box-shadow:rgba(0,0,0,0.1) 0 5px 5px;
+	
+}
+.content_bottom{
+   position:relative;margin: 20 20 0 20
+}
+.content_bottom_left{
+	width: 200px;
+	height: 100%;
+	float:left;
+	box-shadow:rgba(0,0,0,0.2) 0 0 10px;
+	border-radius:5px; position:relative;
+	display: inline-block;
+	margin-left: 20px;
+    margin-top: 20px;
+}
+.content_bottom_right{
+	display:inline-block;position:relative;box-shadow:rgba(0,0,0,0.2) 0 0 10px;
+	border-radius:5px;width:300px;margin-top: 20px;margin-left: 10px
+}
+.table{
+	text-align: center;
+}
+
+
+.table > thead > tr > th {
+
+    border-bottom:none !important;
+}
+.table > thead > tr{ background:#f3f8fe; color:#666; border-radius:5px 5px 0 0 ; display:block;}
+
+
+.content_bottom_title{background:#f3f8fe; color:#666; border-radius:5px 5px 0 0 ; line-height:36px; text-indent:8px; font-weight:bold; border-bottom:1px #ddd solid; }
+
+
+.content_top_left{position:absolute; left:20px; right:20px; top:60px; bottom:20px; border:1px solid #e0e5ed;; border-radius:5px;border:1px solid #28a7e1; overflow:hidden;}
+.buding{ position:absolute; right:0; top:0; width: 18px;height: 40px; background:#f3f8fe; z-index:3;}
+.buding2 {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 19px;
+    height: 40px;
+    background: #f3f8fe;
+    z-index: 3;
+}
+
+ table .datagrid-header, table  .datagrid-td-rownumber{ background:none !important;}
+ .panel.datagrid {width:100% !important; height:100%;}
+ .datagrid-wrap.panel-body.panel-body-noheader {width:100% !important;padding:0 !important;}
+ .datagrid-view {width:100% !important;}
+ .datagrid-view2 {width:100% !important; left:0 !important;}
+ .datagrid-header {width:100% !important;height:40px !important; overflow-y:scroll;}
+ .datagrid-header-inner {width:100% !important;height: 40px !important;}
+ table.datagrid-htable {width:100% !important;}
+ .datagrid-body {width:100% !important;}
+ .datagrid-body table{width:100% !important;}
+ table .datagrid-btable {width:100% !important;}
+ table .datagrid-header td, table .datagrid-body td, table .datagrid-footer td {border-width:0 1px 1px 0;border-style:solid !important;margin:0;padding:0;}
+ .datagrid-cell {color:#666; padding:0 0 0 8px !important;}
+ .panel-body {border-color:#ebebeb;}
+ tr.datagrid-header-row {background:#f3f8fe;}
+ .datagrid-header-row, .datagrid-row {height:40px;}
+ .datagrid-header td {border-color:#ebebeb !important; background:#f3f8fe !important; }
+ .panel-body {border:none !important;}
+ .datagrid-body td {border-color:#ebebeb !important; word-break:break-all !important;}
+ .datagrid-cell { position:relative;}
+
+ .datagrid-td-rownumber tr td{ background:#FFF !important;}
+ .datagrid-wrap.panel-body.panel-body-noheader{height:100% !important;}
+ .datagrid-view{height:100% !important;}
+ .datagrid-view1{height:100% !important;}
+ .datagrid-view2{height:100% !important;}
+ .datagrid-view1 .datagrid-body{margin-bottom: 30px;}
+ .datagrid-view2 .datagrid-body{overflow-y: scroll;overflow-y: scroll;
+    position: absolute;
+    top: 40px;
+    left: 0;
+        bottom: 30px;
+    right: 0;
+    height: auto !important;}
+ .datagrid .datagrid-pager {position: absolute;width: 100%;bottom:0px;}
+ .panel.datagrid{ margin-bottom:0 !important;}
+  .datagrid-body td {border-style: solid !important;padding: 5px 0 !important;}
+  .datagrid-body td div{}
+ .datagrid-cell {width: 98% !important;}
+  span.l-btn-icon {display: -webkit-inline-box;width: 16px;}
+
+ .datagrid-header-inner table{width:100% !important;}
+.datagrid-header-inner{width:100% !important;}
+ .datagrid-view1{ display:none;}
+
+ .datagrid-view2 table tbody tr td:nth-child(1){ width:140px; height:40px !important;}
+ .datagrid-view2 table tbody tr td:nth-child(2){ width:140px; height:40px !important;}
+ .datagrid-view2 table tbody tr td:nth-child(3){height:40px !important;}
+
+  .datagrid-body td{ border:#999 solid 1px;}
+.datagrid-sort-icon{ display:none !important;}
+.datagrid-header td { border: 1px dotted #ccc !important;}
+.datagrid-row-selected { background: #28a7e1 !important;}
+.datagrid-row-selected span,.datagrid-row-selected div,.datagrid-row-selected a{ color:#fff !important;}
+.datagrid-row-alt {
+    background: #fbfbfb;
+}
+
+
+
+.pagination {margin:0 !important;}
+.datagrid-header-inner { padding-right:0 !important;}
+
+
+
+.bigtitle{ font-weight:bold; margin:20px 20px; color:#666;}
+#addUser{display:inline-block; width:80px; height:30px; border-radius:5px; margin-top:15px; cursor:pointer; text-indent:0 !important;background:#28a7e1; border:#28a7e1; color:#FFF; margin-left:190px; float:right; margin-right:20px; font-weight:500;
+}
+#addUser:hover,#configsubmit:hover{ opacity:0.8;}
+
+
+#authoritys{border:#CCC solid 1px;height:300px; border-radius:5px; top:60px; left:20px; right:20px; padding-bottom:60px;}
+.checkbox-inline{ width:100px; margin-left:40px !important; margin-top:30px !important; display:inline-block;}
+
+#configsubmit{ position:absolute;right:0; bottom:10px;width:80px; height:30px; border-radius:5px; cursor:pointer; text-indent:0 !important;background:#28a7e1; border:#28a7e1; color:#FFF; font-family:"微软雅黑" !important; margin-right:20px !important;   }
+
+.tablebox{width:100%; height:300px; border:1px #d4d4d4 solid;}
+
+.tablebox .datagrid-view2 .datagrid-body{ bottom:0  !important; }
+
+#addRole{position:absolute;right:10px;top:2px;width:80px; height:30px; border-radius:5px; cursor:pointer; text-indent:0 !important;background:#28a7e1; border:#28a7e1; color:#FFF; font-family:"微软雅黑" !important; }
+thead{background: rgb(243, 248, 254);}

@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ty</groupId>
+	<artifactId>statis_analysis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- redis配置 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<!--支持 Web 应用开发，包含 Tomcat 和 spring-mvc。 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 模板引擎 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!--springboot 集成Mybatis所需jar配置 start -->
+		<!--支持使用 JDBC 访问数据库 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<!--Mysql,postgresql / DataSource -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!--springboot 集成Mybatis所需jar配置 end -->
+		<!--Json Support -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.43</version>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件 end -->
+		<!-- httpclient工具 -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- ftp -->
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>sshtools</groupId>
+			<artifactId>j2ssh-core</artifactId>
+			<version>0.2.2</version>
+		</dependency>
+		
+		<!-- spring aop支持-->  
+		<dependency>
+      		<groupId>org.springframework.boot</groupId>
+      	<artifactId>spring-boot-starter-aop</artifactId>
+  </dependency>
+	</dependencies>
+
+	<build>
+		<finalName>statis_analysis</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>1.2.3.RELEASE</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>application-dev.properties</exclude>
+					<exclude>application-sit.properties</exclude>
+					<exclude>application-prd1.properties</exclude>
+					<exclude>application-prd2.properties</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>application-${profiles.active}.properties</include>
+					<include>application.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+	<!--配置远程仓库地址 -->
+	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+	<!--配置远程仓库地址 -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestone</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<!-- 不同环境查找不同配置文件 -->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profiles.active>dev</profiles.active>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>sit</id>
+			<properties>
+				<profiles.active>sit</profiles.active>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>
+		<profile>
+			<id>prd1</id>
+			<properties>
+				<profiles.active>prd1</profiles.active>
+				<maven.test.skip>true</maven.test.skip>
+				<scope.jar>provided</scope.jar>
+			</properties>
+		</profile>
+		<profile>
+			<id>prd2</id>
+			<properties>
+				<profiles.active>prd2</profiles.active>
+				<maven.test.skip>true</maven.test.skip>
+				<scope.jar>provided</scope.jar>
+			</properties>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+.right{
+	top:5px;
+	width:100%;
+	float: left;
+}
+.left{
+	width:100%;
+	float: left;
+}
+#regionalStaMap{
+	height:100%;
+	width: 100%;
+}
+#regionalStaHist{
+	height:100%;
+	width: 100%;
+}
+.highcharts-credits{display:none;}
+
+.appName,.operateSystem{
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.appName>select,.operateSystem>select{width: 85px;height: 25px;font-size: 16px}
+.filter span {
+    color: #28a7e1;
+	 font-size:17px;
+}
+.filter{margin-bottom:10px;border:1px #eaeaea solid;padding:10px;margin-top:10px;margin-left:5px;margin-right:5px;border-radius:5px;box-shadow:rgba(0,0,0,0.1) 0 1px 5px;z-index: 2}
+
+input, select {
+    outline: none;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #666;
+    background: #fbfbfb !important;
+}
+#search{
+	display: inline-block;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-indent: 0 !important;
+    background: #28a7e1;
+    border: #28a7e1;
+    color: #FFF;
+    font-weight: 500;
+}
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>异常信息</title>
+<meta name="viewport" content="width=device-width,height=device-height,maximum-scale=1.0,user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="css/exceptionInfoMg.css" media="screen and (min-width:820px)"/>
+<link rel="stylesheet" type="text/css" href="css/exceptionInfoMgmedia820.css" media="screen and (max-width:820px)"/>
+</head>
+<body>
+	<div class="filter">
+		<div class="appName">
+			<span>App名称:</span>
+			<select>
+				<option value="all">全部</option>
+				<option value="1">天易在线</option>
+				<option value="2">天易派工</option>
+				<option value="4">天易在线服务端</option>
+				<option value="5">天易派工服务端</option>
+			</select>
+		</div>
+		<div class="state">
+			<span>状态:</span>
+			<select>
+				<option value="all">全部</option>
+				<option value="1">未解决</option>
+				<option value="2">已解决</option>
+				<option value="3">挂起</option>
+			</select>
+		</div>
+		<div class="startTime">
+			<span>开始时间:</span>
+			<input id="start" type="text" class="easyui-datebox" required>
+		</div>
+		<div class="endTime">
+			<span>结束时间:</span>
+			<input id="end" type="text" class="easyui-datebox" required>
+		</div>
+		<button id="search" class="search">查询</button>
+	</div>
+	
+	
+	<div class="functions">
+		<button id="typebtn" class="pushClickRate btn-act btn-switch">异常类型统计</button>
+		<button id="detailsbtn" class="pageParkTimes btn-switch">异常详细统计</button>
+		<button id="meltmodelsbtn" class="buriedPoint btn-switch">奔溃机型统计</button>
+	</div>
+	
+	
+	<div>
+		<div class="showResult" id = "showResult1">
+		<div class="buding"></div>
+		<div id="dgType"></div>
+		</div>
+		
+		<div class="showResult" id = "showResult2" style="display: none;">
+		    <div class="btn-gpoup">
+				<button id="resolve">解决问题</button>
+				<button id="returnType">返回</button>
+			</div>
+			<div class="buding"></div>
+			<div id="dgDetails"></div>
+		</div>
+		<div class="showResult" id = "showResult3" style="display: none;">
+			<div id = "meltmodels"></div>
+		</div>
+	</div>
+    <div class="model"  style="display: none;">
+          <div class="box">
+			<span id="exceptionId" style="display: none"></span>
+			<div class="top">
+				<span class="title">异常详情：</span>
+				<span id="problemDescription"></span>
+			</div>
+			<div class="content">
+				<span class="title">问题原因:</span><textarea placeholder="请输入问题原因"  id="reasons" rows="10",cols="30"></textarea><br/>
+				<span class="title title2">解决办法:</span><textarea placeholder="请输入解决方法" id="method" rows="10" cols="30"></textarea><br/>
+				<span class="title title3">解决人:</span><input placeholder="请输入解决人" id="resolvepersons" type="text" name='resolvePerson'>
+			</div>
+			<div class="bottom">
+				<button id="resolved">解决</button>
+				<button id="hangup">挂起</button>
+				<button id='cancel'>取消</button>
+			</div>
+            </div>
+		</div>
+    
+	
+	<script type="text/javascript" src="../easyui/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../highmaps/js/highcharts.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/exceptionInfoMg.js"></script>
+	
+	
+	<script>
+    $(function(){
+		$('.btn-switch').click(function(){
+			$('.btn-switch').removeClass('btn-act');
+			$(this).addClass('btn-act');
+			})
+		})
+    
+    </script>
+	
+</body>
+</html>

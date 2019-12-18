@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+html{
+	height: 100%; width:100%;
+	margin: 0;
+    padding: 0;
+    list-style: none;overflow:hidden;
+}
+
+
+body {
+	font-family: "微软雅黑";
+	height:100%;width:100%;
+	margin: 0;
+    padding: 0;overflow:hidden;
+}
+a{text-decoration: none !important;}
+a:HOVER{color: #FFFFFF !important; cursor: pointer;}
+
+
+.topleft{ width:100%; height:205px;}
+
+
+.logo>img{
+	width: 77px;
+	height: 49px;
+	margin-left: 10px;
+	margin-top: 4px;
+}
+.content{height:100%;width: 100%; position:absolute; top:0; left:0; bottom:0; rignt:0;}
+.contentleft{
+	width: 250px;
+	position:absolute;
+	top:0; bottom:0; left:0;
+	background:#525252;
+
+}
+.contentright{
+	position: absolute;
+	top:0; left:250px;
+	right:0; bottom:0;
+	}
+.contentleft>ul a{
+	text-align: center;
+}
+iframe{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	overflow:hidden;
+	margin:0; padding:0;
+}
+.bottom{
+	height: 20px;
+	background-color: #3E5D86
+}
+.lightTip{ position:absolute; z-index:99999; background:rgba(0,0,0,0.8); padding:25px 25px 20px 25px; position:absolute; top:50%; left:50%; margin-top:-30px;}
+.lightTip>span{ width:30px; height:30px; display:inline-block; margin:0; padding:0;}
+.lightTip>a{font-size:18px; color:#fff; position:relative; top:-8px; margin-left:15px;}
+.lightTipSuc{ background:url(../img/lightTip.png);}
+.lightTipFail{ background:url(../img/lightTip.png) 0 -30px no-repeat;}
+
+.nav >li:hover,.nav > li:focus {background-color:#666; color:#FFF;}
+
+
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{ background-color:#333;}
+
+.nav > li > a{ color:#CCC; text-align:left; text-indent:50px;}
+
+.logo{ width:100px; height:80px; background:url(../images/icon_logo.png) no-repeat;margin:30px 0 0 95px; background-size:50px auto;}
+.logo2{width:200px; height:28px; background:url(../images/icon_logo2.png) no-repeat;margin:10px 0 0 25px; background-size:200px auto; }
+.editpassword,.exit{ width:16px; height:16px; opacity:0.6; display:inline-block; float:right; margin-top:3px;}
+.editpassword{ background:url(../images/set.png); background-size:100% 100%;}
+.exit{ background:url(../images/logout.png);background-size:100% 100%;}
+
+
+.setbox{ padding:8px 0; background:#464646;}
+.editpassword:hover,.exit:hover{ opacity:0.8;}
+
+.editpassword{ margin-left:0;margin-right:20px;}
+.exit{ margin-left:0; margin-right:20px;}
+
+
+.person{ color:#FFF; display:inline-block;width:100px; border-right:1px solid #666;}
+.welcom{ margin-left:10px; display:inline-block; width:44px; color:#999;}
+
+.info{ position:absolute; bottom:20px; color:#888;}
+.info span{ display:block; font-size:12px; text-indent:20px; line-height:20px;}
+.info span a{ color:#999; text-decoration:underline !important;}
+
+
+
+
+
+.dropdown-menu {left: 60px !important;background-color: #666 !important;}
+.dropdown-menu li a{text-align:left; color:#fff;}
+.dropdown-menu li a:hover{ color:#333 !important;}
+
+
+
+
+

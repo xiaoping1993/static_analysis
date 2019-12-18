@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.static_analysis.mapper.tyzx.ModelStaMapper">
+	<select id="getModelStaData" resultType="map" parameterType="map">
+    	select upper(${others}) as name,count(1) as y 
+		from ty_rj_situation 
+		where
+		<if test="appName!='all' and (appName!=null and appName!='')">
+			appName=${appName} and
+		</if>
+		<if test="operateSystem!='all' and (operateSystem!=null and operateSystem!='')">
+			operateSystem=${operateSystem} and 
+		</if>
+		<if test="xiajiname!='null' and (xiajiname!=null and xiajiname!='')">
+			upper(mphone_brand)=#{xiajiname} and
+		</if>
+		appName != 3 and
+		1=1 group by upper(${others})
+	</select>
+</mapper>

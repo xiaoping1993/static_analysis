@@ -1,0 +1,24 @@
+[ERROR][2017-11-17 08:44:31.996][天易在线][异常信息概述1][o.s.boot.context.web.ErrorPageFilter -Forwarding to error page from request [/dispatch4CustomerController] due to exception [Java heap space]
+java.lang.OutOfMemoryError: Java heap space
+	at com.alibaba.fastjson.serializer.SerializeWriter.expandCapacity(SerializeWriter.java:249) ~[fastjson-1.2.15.jar:na]
+	at com.alibaba.fastjson.serializer.SerializeWriter.writeStringWithDoubleQuote(SerializeWriter.java:764) ~[fastjson-1.2.15.jar:na]
+	at com.alibaba.fastjson.serializer.SerializeWriter.writeFieldName(SerializeWriter.java:1737) ~[fastjson-1.2.15.jar:na]
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:164) ~[fastjson-1.2.15.jar:na]
+	at sun.reflect.GeneratedMethodAccessor574.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_80]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_80]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]]
+end$$
+
+[ERROR][2017-11-17 08:44:31.996][天易派工][异常信息概述2][o.s.boot.context.web.ErrorPageFilter -Forwarding to error page from request [/dispatch4CustomerController] due to exception [Java heap space]
+java.lang.OutOfMemoryError: Java heap space
+	at com.alibaba.fastjson.serializer.SerializeWriter.expandCapacity(SerializeWriter.java:249) ~[fastjson-1.2.15.jar:na]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_80]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168) ~[spring-aop-4.2.4.RELEASE.jar:4.2.4.RELEASE]]
+end$$

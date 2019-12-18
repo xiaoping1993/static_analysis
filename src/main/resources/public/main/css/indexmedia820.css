@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+html{
+	width:100%;
+	margin: 0;
+    padding: 0;
+    list-style: none;overflow:scroll;
+}
+
+
+body {
+	font-family: "微软雅黑";
+	height:100%;width:100%;
+	margin: 0;
+    padding: 0;overflow:hidden;
+}
+a{text-decoration: none !important;}
+a:HOVER{color: #FFFFFF !important; cursor: pointer;}
+
+.welcom{margin-left: 10px;display: inline-block;color:#999;}
+.person{color:#fff;display: inline-block;,width:100px;border-right:1px solid #666;}
+.setbox{background-color: #464646;}
+.exit{ width:16px;height:16px;opacity:0.6;display:inline-block;float: right;margin-top: 3px; background-image: url("../images/logout.png");background-size:100% 100%;    margin-right: 6px}
+.editpassword{width: 16px;height:16px;opacity:0.6;display:inline-block;float:right;margin-top:3px;margin-right: 6px;background-image: url("../images/set.png");background-size:100% 100%}
+.info{color: #888;bottom:0px;background-color:#464646;position: fixed;width: 100%}
+.info span{display: block;font-size: 12px;text-indent:10px;line-height: 20px }
+.logo{display:inline-block; position:relative;float:left;width: 50px;height:65px;background: url("../images/icon_logo.png") no-repeat;background-size:40px,65px;margin-left: 10px;margin-top: 6px}
+.logo2{display:inline-block;width:200px;position:relative;float:left;background:url(../images/icon_logo2.png) no-repeat;height: 30px;background-size: 200px;margin-left: 10px;margin-top: 20px;}
+.topleft{background-color: #769c73;overflow: hidden;}
+iframe {border: 0;width: 100%;height:500px}
+ul li{background-color: rgb(154, 153, 116) !important}
+.navbar-default .navbar-nav > li > a {color: #fff;    text-indent: 50px}
